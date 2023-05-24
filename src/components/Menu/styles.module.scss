@@ -1,0 +1,39 @@
+.menu {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: var(--s16);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+
+  .menuIcon {
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: #ffffff;
+    position: relative;
+    bottom: 5px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 2px;
+      background-color: #ffffff;
+      position: relative;
+      top: 4px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #ffffff;
+      position: relative;
+      top: 12px;
+    }
+  }
+}

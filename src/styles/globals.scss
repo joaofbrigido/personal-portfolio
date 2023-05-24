@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #f8fafd;
+  --grey: #a6a6a6;
+  --bg: #1d2228;
+  --bg-100: #464a50;
+  --primary: #f62d2d;
+  --primary-100: #cb0909;
+
+  --s8: 0.5rem;
+  --s16: 1rem;
+  --s18: 1.125rem;
+  --s20: 1.25rem;
+  --s24: 1.5rem;
+  --s32: 2rem;
+  --s42: 2.625rem;
+  --s52: 3.25rem;
+  --s64: 4rem;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', system-ui, -apple-system, Roboto, sans-serif;
+  /* overflow-x: hidden; */
+}
+
+h1,
+h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: var(--s64);
+  font-weight: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mainContainer {
+  max-width: 1104px;
+  margin: 0 auto;
+}
+
+.redSphere {
+  display: block;
+  background-color: var(--primary);
+  filter: blur(120px);
+  width: 368px;
+  height: 383px;
+}
+
+.redSphereBig {
+  display: block;
+  background-color: var(--primary);
+  filter: blur(120px);
+  width: 540px;
+  height: 408px;
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+
+  &-track {
+    background-color: var(--bg-100);
+  }
+
+  &-thumb {
+    background-color: var(--grey);
+    border-radius: 1px;
+
+    &:hover {
+      background-color: #d8d8d8;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: var(--s42);
+  }
+}

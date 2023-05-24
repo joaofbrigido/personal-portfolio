@@ -1,0 +1,90 @@
+.technologies {
+  padding-top: 216px;
+  position: relative;
+
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .list {
+    list-style: none;
+    margin-top: 64px;
+
+    li {
+      border-top: 1px solid #a6a6a6;
+      border-bottom: 1px solid #a6a6a6;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      h3 {
+        font-size: var(--s32);
+        font-weight: bold;
+        color: #a6a6a6;
+        transition: 0.4s ease;
+      }
+
+      .logo {
+        position: absolute;
+        right: 120px;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 12px rgba(255, 255, 255, 0.3);
+        padding: 20px;
+        width: 115px;
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        display: none;
+        animation: zoom-up 0.4s ease forwards;
+        z-index: 9;
+      }
+
+      span {
+        font-size: var(--s18);
+        color: #a6a6a6;
+        transition: 0.4s ease;
+      }
+
+      &:hover {
+        border-color: #ffffff;
+
+        h3,
+        span {
+          color: #ffffff;
+        }
+
+        .logo {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+.sphereTech {
+  opacity: 0.3;
+  position: absolute;
+  top: 55%;
+  left: -200px;
+  z-index: -1;
+  height: 250px;
+}
+
+@keyframes zoom-up {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1) rotate(10deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .technologies .list li .logo {
+    right: 70px;
+  }
+}

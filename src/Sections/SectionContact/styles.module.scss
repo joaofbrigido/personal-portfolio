@@ -1,0 +1,123 @@
+.contact {
+  background-color: #000000;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+
+  .textWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+
+    h4 {
+      font-family: 'Anton', sans-serif;
+      font-size: var(--s64);
+      font-weight: inherit;
+      opacity: 0.75;
+      line-height: 1.3;
+      letter-spacing: 1px;
+    }
+
+    &.border h4 {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: var(--white);
+      -webkit-text-stroke-width: 2px;
+    }
+
+    &:nth-child(1) h4 {
+      animation: scrolling-text linear 12s infinite;
+    }
+    &:nth-child(2) h4 {
+      animation: scrolling-text-reverse 6s linear infinite forwards;
+    }
+    &:nth-child(3) h4 {
+      animation: scrolling-text-last 5s linear infinite forwards;
+    }
+  }
+
+  .wrapper {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-top: 90px;
+
+    .links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      li a {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        font-weight: bold;
+        font-size: var(--s32);
+      }
+    }
+  }
+}
+
+.sphereHero {
+  opacity: 0.25;
+  position: absolute;
+  left: -100px;
+  bottom: -200px;
+}
+
+@keyframes scrolling-text {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-296%);
+  }
+}
+
+@keyframes scrolling-text-reverse {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(193%);
+  }
+}
+
+@keyframes scrolling-text-last {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-266%);
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact .wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact .wrapper {
+    .links li a {
+      font-size: var(--s20);
+
+      img {
+        max-width: 32px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .sphereHero {
+    display: none;
+  }
+}

@@ -1,0 +1,39 @@
+.about {
+  margin-top: 216px;
+  width: 100%;
+  background-color: #0a0c10;
+
+  .wrapper {
+    padding: 100px 20px;
+  }
+
+  h3 {
+    font-size: var(--s64);
+    opacity: 0.3;
+    transition: 0.2s linear;
+
+    & + h3 {
+      margin-top: 16px;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .about {
+    h3 {
+      font-size: var(--s42);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .about {
+    h3 {
+      font-size: 36px;
+    }
+  }
+}
