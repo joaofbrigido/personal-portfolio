@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, MutableRefObject } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import S from './styles.module.scss';
 
 type CarouselProps = {
@@ -47,85 +48,59 @@ const Projects = () => {
     },
   ];
   const [projects] = useState<CarouselProps[]>(carouselData);
-  const [currentItem, setCurrentItem] = useState<CarouselProps>(
-    carouselData[0]
-  );
+  const carousel = useRef() as MutableRefObject<HTMLUListElement>;
+  const [widthContainer, setWidthContainer] = useState(0);
 
-  function activeItem(item: CarouselProps) {
-    setCurrentItem(item);
-  }
+  useEffect(() => {
+    setWidthContainer(
+      carousel.current?.scrollWidth - carousel.current?.offsetWidth
+    );
+  }, []);
 
   return (
-    <div className={S.projectContainer}>
-      <section id="Projects" className={`mainContainer ${S.projects}`}>
-        <div className={S.wrapper}>
-          <h2>Projetos.</h2>
+    <section id="Projects" className={`mainContainer ${S.projects}`}>
+      <div className={S.wrapper}>
+        <h2>Projetos.</h2>
 
-          <ul className={S.projectList}>
-            {projects.map((item) => (
-              <li key={item.id + '-carouselItem'}>
-                <span
-                  className={`${S.number} ${
-                    currentItem === item ? S.active : ''
-                  }`}
-                >
-                  {item.position}
-                </span>
+        <motion.ul
+          className={S.projectCarousel}
+          ref={carousel}
+          whileTap={{ cursor: 'grabbing' }}
+          drag="x"
+          dragConstraints={{ right: 0, left: -widthContainer }}
+        >
+          {!!projects.length &&
+            projects.map((project) => (
+              <motion.li
+                className={S.carouselItem}
+                key={`${project.title}-${project.id}`}
+              >
+                <div className={S.image}>
+                  <Image
+                    src={project.img}
+                    width={600}
+                    height={300}
+                    alt={project.title}
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
                 <div className={S.content}>
-                  <section
-                    className={`${S.left} ${
-                      currentItem === item ? S.active : ''
-                    }`}
-                  >
-                    <h3 className={`${currentItem === item ? S.active : ''}`}>
-                      {item.title}
-                    </h3>
-                    <p className={`${currentItem === item ? S.active : ''}`}>
-                      {item.description}
-                    </p>
-                    <div
-                      className={`${S.linksWrapp} ${
-                        currentItem === item ? S.active : ''
-                      }`}
-                    >
-                      <Link href={item.linkProject} target="_blank">
-                        Ver Projeto
-                      </Link>
-                      <Link href={item.linkGithub} target="_blank">
-                        Ver No Github
-                      </Link>
-                    </div>
-                  </section>
-
-                  <div
-                    className={`${S.image} ${
-                      currentItem === item ? S.active : ''
-                    } ${item.id < currentItem.id ? S.pass : ''}`}
-                  >
-                    <Image
-                      src={item.img}
-                      width={580}
-                      height={420}
-                      alt={item.title}
-                    />
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className={S.linksWrapp}>
+                    <Link href={project.linkProject} target="_blank">
+                      Ver Projeto
+                    </Link>
+                    <Link href={project.linkGithub} target="_blank">
+                      Ver No Github
+                    </Link>
                   </div>
                 </div>
-              </li>
+              </motion.li>
             ))}
-          </ul>
-
-          <div className={S.btnsWrapp}>
-            {projects.map((item) => (
-              <button
-                key={item.id + '-btnCarousel'}
-                className={currentItem === item ? S.active : ''}
-                onClick={() => activeItem(item)}
-              ></button>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+        </motion.ul>
+      </div>
+    </section>
   );
 };
 
