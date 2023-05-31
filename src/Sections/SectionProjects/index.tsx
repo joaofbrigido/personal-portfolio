@@ -1,8 +1,16 @@
 import { useState, useEffect, useRef, MutableRefObject } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import S from './styles.module.scss';
+import {
+  showLeft,
+  showUp,
+  showUpLow,
+  transitionDefault,
+  zoom,
+  zoomLow,
+} from '@/util/animationProps';
 
 type CarouselProps = {
   id: number;
@@ -53,14 +61,19 @@ const Projects = () => {
 
   useEffect(() => {
     setWidthContainer(
-      carousel.current?.scrollWidth - carousel.current?.offsetWidth
+      carousel.current?.scrollWidth + 90 - carousel.current?.offsetWidth
     );
   }, []);
 
   return (
     <section id="Projects" className={`mainContainer ${S.projects}`}>
       <div className={S.wrapper}>
-        <h2>Projetos.</h2>
+        <motion.h2
+          {...showLeft}
+          transition={{ ...transitionDefault, delay: 0.15 }}
+        >
+          Projetos.
+        </motion.h2>
 
         <motion.ul
           className={S.projectCarousel}
@@ -70,32 +83,56 @@ const Projects = () => {
           dragConstraints={{ right: 0, left: -widthContainer }}
         >
           {!!projects.length &&
-            projects.map((project) => (
+            projects.map((project, idx) => (
               <motion.li
-                className={S.carouselItem}
                 key={`${project.title}-${project.id}`}
+                {...zoomLow}
+                transition={{
+                  ...transitionDefault,
+                  delay: idx >= 2 ? 0.1 : idx * 0.2,
+                }}
               >
-                <div className={S.image}>
-                  <Image
-                    src={project.img}
-                    width={600}
-                    height={300}
-                    alt={project.title}
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <div className={S.content}>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className={S.linksWrapp}>
-                    <Link href={project.linkProject} target="_blank">
-                      Ver Projeto
-                    </Link>
-                    <Link href={project.linkGithub} target="_blank">
-                      Ver No Github
-                    </Link>
+                <motion.div className={S.carouselItem}>
+                  <motion.div
+                    className={S.image}
+                    {...showUpLow}
+                    transition={{ ...transitionDefault, delay: 0.4 }}
+                  >
+                    <Image
+                      src={project.img}
+                      width={600}
+                      height={300}
+                      alt={project.title}
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </motion.div>
+                  <div className={S.content}>
+                    <motion.h3
+                      {...showUpLow}
+                      transition={{ ...transitionDefault, delay: 0.5 }}
+                    >
+                      {project.title}
+                    </motion.h3>
+                    <motion.p
+                      {...showUpLow}
+                      transition={{ ...transitionDefault, delay: 0.6 }}
+                    >
+                      {project.description}
+                    </motion.p>
+                    <motion.div
+                      className={S.linksWrapp}
+                      {...showUpLow}
+                      transition={{ ...transitionDefault, delay: 0.7 }}
+                    >
+                      <Link href={project.linkProject} target="_blank">
+                        Ver Projeto
+                      </Link>
+                      <Link href={project.linkGithub} target="_blank">
+                        Ver No Github
+                      </Link>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </motion.li>
             ))}
         </motion.ul>
