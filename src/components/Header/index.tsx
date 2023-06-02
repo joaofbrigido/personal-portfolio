@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import Menu from '../Menu';
+import BtnMenu from '../BtnMenu';
 import { showDown } from '@/util/animationProps';
 import { motion } from 'framer-motion';
 import S from './styles.module.scss';
 
 const Header = () => {
   return (
-    <header className="mainContainer">
+    <header className="">
       <motion.div
-        className={S.wrapper}
+        className={`mainContainer ${S.wrapper}`}
         {...showDown}
         transition={{
           duration: 0.3,
@@ -21,7 +21,7 @@ const Header = () => {
         <Link href="/">
           <span className={S.logo}>JFAB</span>
         </Link>
-        <Menu />
+        <BtnMenu />
       </motion.div>
     </header>
   );

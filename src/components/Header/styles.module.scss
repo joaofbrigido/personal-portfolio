@@ -1,11 +1,17 @@
-.logo {
-  font-size: var(--s18);
-  font-family: 'Anton', sans-serif;
-}
-
 .wrapper {
   padding: 16px 20px;
   display: flex;
   justify-content: space-between;
   gap: 24px;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .logo {
+    font-size: var(--s18);
+    font-family: 'Anton', sans-serif;
+  }
 }

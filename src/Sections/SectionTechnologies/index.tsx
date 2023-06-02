@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { easeInOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { showLeft, showRight, transitionDefault } from '@/util/animationProps';
 import S from './styles.module.scss';
 
@@ -96,7 +96,10 @@ const Technologies = () => {
             <li key={tech.id}>
               <motion.h3
                 {...showLeft}
-                transition={{ ...transitionDefault, delay: 0.15 }}
+                transition={{
+                  ...transitionDefault,
+                  delay: idx > 4 ? 0.25 : idx * 0.12,
+                }}
               >
                 {tech.technology}
               </motion.h3>
@@ -113,7 +116,10 @@ const Technologies = () => {
               </div>
               <motion.span
                 {...showRight}
-                transition={{ ...transitionDefault, delay: 0.15 }}
+                transition={{
+                  ...transitionDefault,
+                  delay: idx > 4 ? 0.25 : idx * 0.12,
+                }}
               >
                 {tech.time}
               </motion.span>

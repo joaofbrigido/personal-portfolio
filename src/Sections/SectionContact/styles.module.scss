@@ -56,6 +56,11 @@
         align-items: center;
         font-weight: bold;
         font-size: var(--s32);
+        transition: 0.25s ease;
+
+        &:hover {
+          transform: translateX(10px);
+        }
       }
     }
   }

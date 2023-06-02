@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import S from './styles.module.scss';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { showUpLow, transitionDefault, zoom } from '@/util/animationProps';
 
 const Contact = () => {
   return (
@@ -69,7 +71,7 @@ const Contact = () => {
 
       <div className={`${S.wrapper} mainContainer`}>
         <ul className={S.links}>
-          <li>
+          <motion.li {...showUpLow} transition={{ transitionDefault }}>
             <Link href="#" target="_blank">
               <Image
                 src="/icons/whatsapp-icon.svg"
@@ -77,10 +79,13 @@ const Contact = () => {
                 height={48}
                 alt="Whatsapp"
               />
-              <span>(14) 999683-0102</span>
+              <span>(14) 99683-0102</span>
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            {...showUpLow}
+            transition={{ ...transitionDefault, delay: 0.2 }}
+          >
             <Link href="#" target="_blank">
               <Image
                 src="/icons/email-icon.svg"
@@ -90,8 +95,11 @@ const Contact = () => {
               />
               <span>joaofbrigido@hotmail.com</span>
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            {...showUpLow}
+            transition={{ ...transitionDefault, delay: 0.4 }}
+          >
             <Link href="#" target="_blank">
               <Image
                 src="/icons/github-icon.svg"
@@ -101,8 +109,11 @@ const Contact = () => {
               />
               <span>Github</span>
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            {...showUpLow}
+            transition={{ ...transitionDefault, delay: 0.6 }}
+          >
             <Link href="#" target="_blank">
               <Image
                 src="/icons/linkedin-icon.svg"
@@ -112,14 +123,19 @@ const Contact = () => {
               />
               <span>Linkedin</span>
             </Link>
-          </li>
+          </motion.li>
         </ul>
-        <Image
-          src="/contact-mockup.png"
-          width={432}
-          height={414}
-          alt="Ilustração de uma estátua grega"
-        />
+        <motion.div
+          {...zoom}
+          transition={{ ...transitionDefault, delay: 0.75 }}
+        >
+          <Image
+            src="/contact-mockup.png"
+            width={432}
+            height={414}
+            alt="Ilustração de uma estátua grega"
+          />
+        </motion.div>
       </div>
       <span className={`redSphere ${S.sphereHero}`}></span>
     </section>

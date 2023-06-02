@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef, MutableRefObject } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import S from './styles.module.scss';
 import {
   showLeft,
-  showUp,
   showUpLow,
   transitionDefault,
-  zoom,
   zoomLow,
 } from '@/util/animationProps';
 
