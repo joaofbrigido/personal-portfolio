@@ -110,7 +110,7 @@ const Technologies = () => {
                   height={tech.img.height}
                   alt={tech.technology}
                   style={{
-                    transform: `${tech.transform ? tech.transform : 'inital'}`,
+                    transform: `${tech.transform ? tech.transform : 'initial'}`,
                   }}
                 />
               </div>

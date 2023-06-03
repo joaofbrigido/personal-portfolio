@@ -40,6 +40,12 @@ export const showUpLow = {
   viewport: { once: true },
 };
 
+export const showOpacity = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true },
+};
+
 export const transitionDefault = {
   duration: 0.3,
   type: 'spring',

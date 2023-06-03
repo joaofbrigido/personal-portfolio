@@ -67,6 +67,10 @@ a {
   height: 408px;
 }
 
+.scrollHidden {
+  overflow: hidden;
+}
+
 /* Estilo da barra de rolagem */
 ::-webkit-scrollbar {
   width: 8px;
