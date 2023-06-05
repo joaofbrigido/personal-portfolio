@@ -6,7 +6,7 @@ import { showUpLow, transitionDefault, zoom } from '@/util/animationProps';
 
 const Contact = () => {
   return (
-    <section className={S.contact}>
+    <section className={S.contact} id="contact">
       <div className={S.textWrap}>
         <h4>ENTRE</h4>
         <h4>ENTRE</h4>
@@ -72,7 +72,7 @@ const Contact = () => {
       <div className={`${S.wrapper} mainContainer`}>
         <ul className={S.links}>
           <motion.li {...showUpLow} transition={{ transitionDefault }}>
-            <Link href="#" target="_blank">
+            <Link href="https://wa.me/5514996830102" target="_blank">
               <Image
                 src="/icons/whatsapp-icon.svg"
                 width={48}
@@ -86,7 +86,7 @@ const Contact = () => {
             {...showUpLow}
             transition={{ ...transitionDefault, delay: 0.2 }}
           >
-            <Link href="#" target="_blank">
+            <p>
               <Image
                 src="/icons/email-icon.svg"
                 width={48}
@@ -94,13 +94,13 @@ const Contact = () => {
                 alt="Email"
               />
               <span>joaofbrigido@hotmail.com</span>
-            </Link>
+            </p>
           </motion.li>
           <motion.li
             {...showUpLow}
             transition={{ ...transitionDefault, delay: 0.4 }}
           >
-            <Link href="#" target="_blank">
+            <Link href="https://github.com/joaofbrigido" target="_blank">
               <Image
                 src="/icons/github-icon.svg"
                 width={48}
@@ -114,7 +114,10 @@ const Contact = () => {
             {...showUpLow}
             transition={{ ...transitionDefault, delay: 0.6 }}
           >
-            <Link href="#" target="_blank">
+            <Link
+              href="https://www.linkedin.com/in/jo%C3%A3o-fernando-amaral-brigido-21a207175/"
+              target="_blank"
+            >
               <Image
                 src="/icons/linkedin-icon.svg"
                 width={48}

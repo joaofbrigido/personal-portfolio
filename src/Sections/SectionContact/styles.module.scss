@@ -50,12 +50,14 @@
       flex-direction: column;
       gap: 32px;
 
-      li a {
+      li a,
+      li p {
         display: flex;
         gap: 16px;
         align-items: center;
         font-weight: bold;
         font-size: var(--s32);
+        cursor: pointer;
         transition: 0.25s ease;
 
         &:hover {

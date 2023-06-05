@@ -1,3 +1,4 @@
+'use-client';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 import BtnMenu from '../BtnMenu';
@@ -9,6 +10,7 @@ import {
   transitionDefault,
 } from '@/util/animationProps';
 import { motion } from 'framer-motion';
+import { Link as LinkScroll } from 'react-scroll';
 import S from './styles.module.scss';
 
 const Header = () => {
@@ -89,31 +91,73 @@ const Header = () => {
                 {...showUpLow}
                 transition={{ ...transitionDefault, delay: 0.4 }}
               >
-                <Link href="#">Home</Link>
+                <LinkScroll
+                  to="hero"
+                  smooth={true}
+                  duration={700}
+                  onClick={closeMenu}
+                >
+                  Home
+                </LinkScroll>
               </motion.li>
               <motion.li
                 {...showUpLow}
                 transition={{ ...transitionDefault, delay: 0.55 }}
               >
-                <Link href="#">Tecnologias</Link>
+                <LinkScroll
+                  to="technologies"
+                  smooth={true}
+                  offset={90}
+                  duration={700}
+                  onClick={closeMenu}
+                >
+                  Tecnologias
+                </LinkScroll>
               </motion.li>
               <motion.li
                 {...showUpLow}
                 transition={{ ...transitionDefault, delay: 0.7 }}
+                onClick={closeMenu}
               >
-                <Link href="#">Projetos</Link>
+                <LinkScroll
+                  to="projects"
+                  smooth={true}
+                  offset={0}
+                  duration={700}
+                  onClick={closeMenu}
+                >
+                  Projetos
+                </LinkScroll>
               </motion.li>
               <motion.li
                 {...showUpLow}
                 transition={{ ...transitionDefault, delay: 0.85 }}
+                onClick={closeMenu}
               >
-                <Link href="#">Sobre</Link>
+                <LinkScroll
+                  to="about"
+                  smooth={true}
+                  offset={-200}
+                  duration={700}
+                  onClick={closeMenu}
+                >
+                  Sobre
+                </LinkScroll>
               </motion.li>
               <motion.li
                 {...showUpLow}
                 transition={{ ...transitionDefault, delay: 1 }}
+                onClick={closeMenu}
               >
-                <Link href="#">Contato</Link>
+                <LinkScroll
+                  to="contact"
+                  smooth={true}
+                  offset={90}
+                  duration={700}
+                  onClick={closeMenu}
+                >
+                  Contato
+                </LinkScroll>
               </motion.li>
             </ul>
           </nav>

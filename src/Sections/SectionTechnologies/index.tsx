@@ -82,7 +82,7 @@ const Technologies = () => {
   ];
 
   return (
-    <section className={`mainContainer ${S.technologies}`}>
+    <section className={`mainContainer ${S.technologies}`} id="technologies">
       <div className={S.wrapper}>
         <motion.h2
           {...showLeft}

@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { showUp, zoom } from '@/util/animationProps';
+import { Link as LinkScroll } from 'react-scroll';
 import S from './styles.module.scss';
 
 const Hero = () => {
   return (
-    <main className={`mainContainer ${S.hero}`}>
+    <main className={`mainContainer ${S.hero}`} id="hero">
       <span className={`redSphere ${S.sphereHero} ${S.sphereHero1}`}></span>
       <div className={S.wrapper}>
         <div className={S.left}>
@@ -43,7 +44,9 @@ const Hero = () => {
               damping: 20,
             }}
           >
-            <Link href="#projects">PROJETOS</Link>
+            <LinkScroll to="projects" smooth={true} duration={700}>
+              PROJETOS
+            </LinkScroll>
           </motion.div>
         </div>
 

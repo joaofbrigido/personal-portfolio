@@ -27,7 +27,7 @@ const Projects = () => {
       position: '01',
       title: 'Cryptoprice',
       description:
-        'Aplicação Web em NextJS que faz o cálculo do preço médio de compra das criptomoedas Bitcoin e Ethereum.',
+        'Aplicação Web, em NextJS, que faz o cálculo do preço médio de compra das criptomoedas Bitcoin e Ethereum e exibe a cotação em tempo real.',
       linkProject: '#',
       linkGithub: '#',
       img: '/projects/project-2.jpg',
@@ -37,7 +37,7 @@ const Projects = () => {
       position: '02',
       title: 'Site DoQR',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, repudiandae minima. Minima dolorum consequuntur error.',
+        'Site e blog para empresa DoQR Tecnologia, totalmente gerenciável por um CMS. Utilizado NextJs, GraphQL (Hygraph) e Figma',
       linkProject: '#',
       linkGithub: '#',
       img: '/projects/project-3.jpg',
@@ -64,7 +64,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="Projects" className={`mainContainer ${S.projects}`}>
+    <section id="projects" className={`mainContainer ${S.projects}`}>
       <div className={S.wrapper}>
         <motion.h2
           {...showLeft}

@@ -73,7 +73,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className={`${S.about}`}>
+    <section className={`${S.about}`} id='about'>
       <div className={`${S.wrapper} mainContainer`}>
         <h3 ref={firstH3Ref} className={S.active}>
           Me interesso muito por tecnologias e adoro resolver problemas

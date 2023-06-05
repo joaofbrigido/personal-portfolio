@@ -58,9 +58,15 @@
     li {
       font-size: var(--s42);
       font-weight: bold;
+      cursor: pointer;
 
       a {
         letter-spacing: 1px;
+        transition: 0.25s ease;
+
+        &:hover {
+          color: var(--primary);
+        }
       }
     }
   }
@@ -92,5 +98,11 @@
 
   &.active {
     display: block;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sphere.active {
+    display: none;
   }
 }
