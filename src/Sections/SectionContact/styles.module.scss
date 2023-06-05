@@ -110,7 +110,8 @@
 
 @media (max-width: 575px) {
   .contact .wrapper {
-    .links li a {
+    .links li a,
+    .links li p {
       font-size: var(--s20);
 
       img {
