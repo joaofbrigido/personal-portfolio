@@ -12,7 +12,6 @@ import {
 
 type CarouselProps = {
   id: number;
-  position: string;
   title: string;
   description: string;
   linkProject: string;
@@ -24,33 +23,39 @@ const Projects = () => {
   const carouselData = [
     {
       id: 1,
-      position: '01',
       title: 'Cryptoprice',
       description:
-        'Aplicação Web, em NextJS, que faz o cálculo do preço médio de compra das criptomoedas Bitcoin e Ethereum e exibe a cotação em tempo real.',
-      linkProject: '#',
-      linkGithub: '#',
+        'Aplicação Web em NextJS, que faz o cálculo do preço médio de compra das criptomoedas Bitcoin e Ethereum e exibe a cotação em tempo real.',
+      linkProject: 'https://cryptoprice.joaobrigido.com.br/',
+      linkGithub: 'https://github.com/joaofbrigido/cryptoprice',
       img: '/projects/project-2.jpg',
     },
     {
       id: 2,
-      position: '02',
       title: 'Site DoQR',
       description:
-        'Site e blog para empresa DoQR Tecnologia, totalmente gerenciável por um CMS. Utilizado NextJs, GraphQL (Hygraph) e Figma',
-      linkProject: '#',
+        'Site e blog para empresa DoQR Tecnologia, totalmente gerenciável por um CMS. Utilizado NextJs, Sass, GraphQL (Hygraph) e Figma',
+      linkProject: 'https://www.doqr.com.br/',
       linkGithub: '#',
       img: '/projects/project-3.jpg',
     },
     {
       id: 3,
-      position: '03',
       title: 'Site Safrasul Alimentos',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus.',
-      linkProject: '#',
+        'Desenvolvimento e Design do site para Safrasul Alimentos. Tecnologias utilizadas: Html/Css/Javascript, C# Asp.Net Core e AdobeXD',
+      linkProject: 'https://safrasul.com.br/',
       linkGithub: '#',
       img: '/projects/project-1.jpg',
+    },
+    {
+      id: 4,
+      title: 'Controle Financeiro',
+      description:
+        'Aplicação Web que faz a gestão de receitas e despezas utilizando Html/Css/Javascript',
+      linkProject: 'https://joaofbrigido.github.io/controle-financeiro/',
+      linkGithub: 'https://github.com/joaofbrigido/controle-financeiro',
+      img: '/projects/project-2.jpg',
     },
   ];
   const [projects] = useState<CarouselProps[]>(carouselData);
@@ -122,12 +127,31 @@ const Projects = () => {
                       {...showUpLow}
                       transition={{ ...transitionDefault, delay: 0.7 }}
                     >
-                      <Link href={project.linkProject} target="_blank">
-                        Ver Projeto
-                      </Link>
-                      <Link href={project.linkGithub} target="_blank">
-                        Ver No Github
-                      </Link>
+                      {project.linkProject === '#' ? (
+                        <span
+                          className={S.linkDisabled}
+                          title="Projeto privado"
+                        >
+                          Ver Projeto
+                        </span>
+                      ) : (
+                        <Link href={project.linkProject} target="_blank">
+                          Ver Projeto
+                        </Link>
+                      )}
+
+                      {project.linkGithub === '#' ? (
+                        <span
+                          className={S.linkDisabled}
+                          title="Projeto privado"
+                        >
+                          Ver No Github
+                        </span>
+                      ) : (
+                        <Link href={project.linkGithub} target="_blank">
+                          Ver No Github
+                        </Link>
+                      )}
                     </motion.div>
                   </div>
                 </motion.div>
