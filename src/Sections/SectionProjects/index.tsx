@@ -28,7 +28,7 @@ const Projects = () => {
         'Aplicação Web em NextJS, que faz o cálculo do preço médio de compra das criptomoedas Bitcoin e Ethereum e exibe a cotação em tempo real.',
       linkProject: 'https://cryptoprice.joaobrigido.com.br/',
       linkGithub: 'https://github.com/joaofbrigido/cryptoprice',
-      img: '/projects/project-2.jpg',
+      img: '/projects/imgProject1.jpg',
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const Projects = () => {
         'Site e blog para empresa DoQR Tecnologia, totalmente gerenciável por um CMS. Utilizado NextJs, Sass, GraphQL (Hygraph) e Figma',
       linkProject: 'https://www.doqr.com.br/',
       linkGithub: '#',
-      img: '/projects/project-3.jpg',
+      img: '/projects/imgProject2.jpg',
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ const Projects = () => {
         'Desenvolvimento e Design do site para Safrasul Alimentos. Tecnologias utilizadas: Html/Css/Javascript, C# Asp.Net Core e AdobeXD',
       linkProject: 'https://safrasul.com.br/',
       linkGithub: '#',
-      img: '/projects/project-1.jpg',
+      img: '/projects/imgProject3.jpg',
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ const Projects = () => {
         'Aplicação Web que faz a gestão de receitas e despezas utilizando Html/Css/Javascript',
       linkProject: 'https://joaofbrigido.github.io/controle-financeiro/',
       linkGithub: 'https://github.com/joaofbrigido/controle-financeiro',
-      img: '/projects/project-2.jpg',
+      img: '/projects/imgProject4.jpg',
     },
   ];
   const [projects] = useState<CarouselProps[]>(carouselData);
