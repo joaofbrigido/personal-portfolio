@@ -2,7 +2,7 @@
 
 Site Portfólio com meus últimos projetos, principais tecnologias e contato. Acesse em: [joaobrigido.com.br](https://www.joaobrigido.com.br)
 
-### Tecnologias utilizadas:
+### 🚀 Tecnologias utilizadas:
 
 - Figma (UI/UX Design)
 - NextJS
@@ -12,7 +12,7 @@ Site Portfólio com meus últimos projetos, principais tecnologias e contato. Ac
 
 ##
 
-### Algumas imagens...
+### 📷 Algumas imagens...
 
 <img align="center" alt="Home" width="600" height="210" src="./public/readme/imgReadme1.jpg">
 <img align="center" alt="Home Filtrada" width="600" height="340" src="./public/readme/imgReadme2.jpg">
