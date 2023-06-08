@@ -1,5 +1,6 @@
 .hero {
-  padding-top: 64px;
+  padding-top: 80px;
+  margin-top: 32px;
   position: relative;
 }
 
@@ -81,8 +82,6 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 76px;
-
     h1 {
       font-size: var(--s42);
     }
