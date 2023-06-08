@@ -14,8 +14,8 @@ Site Portfólio com meus últimos projetos, principais tecnologias e contato. Ac
 
 ### Algumas imagens...
 
-<img align="center" alt="Home" width="600" height="450" src="./public/readme/imgReadme1.jpg">
-<img align="center" alt="Home Filtrada" width="600" height="450" src="./public/readme/imgReadme2.jpg">
-<img align="center" alt="Light Mode" width="600" height="450" src="./public/readme/imgReadme3.jpg">
-<img align="center" alt="Pagina Preço Médio" width="600" height="450" src="./public/readme/imgReadme4.jpg">
-<img align="center" alt="Responsivo (Mobile)" width="300" height="740" src="./public/readme/imgReadme5.jpg">
+<img align="center" alt="Home" width="600" height="450" object-fit="contain" src="./public/readme/imgReadme1.jpg">
+<img align="center" alt="Home Filtrada" width="600" height="450" object-fit="contain" src="./public/readme/imgReadme2.jpg">
+<img align="center" alt="Light Mode" width="600" height="450" object-fit="contain" src="./public/readme/imgReadme3.jpg">
+<img align="center" alt="Pagina Preço Médio" width="600" height="450" object-fit="contain" src="./public/readme/imgReadme4.jpg">
+<img align="center" alt="Responsivo (Mobile)" width="600" height="450" object-fit="contain" src="./public/readme/imgReadme5.jpg">
