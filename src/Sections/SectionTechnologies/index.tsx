@@ -8,7 +8,7 @@ const Technologies = () => {
     {
       id: 1,
       technology: 'Html/Css',
-      time: '3 anos',
+      time: '4 anos',
       img: {
         src: '/technologies/logo-html-css.svg',
         width: 90,
@@ -18,7 +18,7 @@ const Technologies = () => {
     {
       id: 2,
       technology: 'Javascript',
-      time: '3 anos',
+      time: '4 anos',
       img: {
         src: '/technologies/logo-js.svg',
         width: 80,
@@ -29,7 +29,7 @@ const Technologies = () => {
     {
       id: 3,
       technology: 'Figma',
-      time: '3 anos',
+      time: '4 anos',
       img: {
         src: '/technologies/logo-figma.svg',
         width: 80,
@@ -40,7 +40,7 @@ const Technologies = () => {
     {
       id: 4,
       technology: 'ReactJs',
-      time: '2 anos',
+      time: '3 anos',
       img: {
         src: '/technologies/logo-reactjs.svg',
         width: 80,
@@ -50,7 +50,7 @@ const Technologies = () => {
     {
       id: 5,
       technology: 'NextJS',
-      time: '1 ano e meio',
+      time: '3 anos',
       img: {
         src: '/technologies/logo-nextjs.svg',
         width: 80,
@@ -60,7 +60,7 @@ const Technologies = () => {
     {
       id: 6,
       technology: 'SQL',
-      time: '1 ano',
+      time: '2 ano',
       img: {
         src: '/technologies/logo-sql.svg',
         width: 80,
