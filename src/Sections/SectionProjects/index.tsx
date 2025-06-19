@@ -23,6 +23,15 @@ const Projects = () => {
   const carouselData = [
     {
       id: 1,
+      title: 'Site Carol Maconi',
+      description:
+        'Site para arquiteta Carol Maconi, focado um SEO, performance e acessibilidade. Utilizado NextJs, Tailwind, Shadcn/UI e Figma',
+      linkProject: 'https://www.carolmaconi.com.br/',
+      linkGithub: 'https://github.com/jfab-projects/carolmaconi',
+      img: '/projects/imgProject5.jpg',
+    },
+    {
+      id: 2,
       title: 'Cryptoprice',
       description:
         'Aplicação Web em NextJS, que faz o cálculo do preço médio de compra das criptomoedas Bitcoin e Ethereum e exibe a cotação em tempo real.',
@@ -31,7 +40,7 @@ const Projects = () => {
       img: '/projects/imgProject1.jpg',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Site DoQR',
       description:
         'Site e blog para empresa DoQR Tecnologia, totalmente gerenciável por um CMS. Utilizado NextJs, Sass, GraphQL (Hygraph) e Figma',
@@ -40,7 +49,7 @@ const Projects = () => {
       img: '/projects/imgProject2.jpg',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Site Safrasul Alimentos',
       description:
         'Desenvolvimento e Design do site para Safrasul Alimentos. Tecnologias utilizadas: Html/Css/Javascript, C# Asp.Net Core e AdobeXD',
@@ -49,7 +58,7 @@ const Projects = () => {
       img: '/projects/imgProject3.jpg',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Controle Financeiro',
       description:
         'Aplicação Web que faz a gestão de receitas e despezas utilizando Html/Css/Javascript',
